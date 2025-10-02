@@ -16,4 +16,12 @@ class CustomImages {
       "assets/images/on_boarding_images/sammy-line-shopping.gif";
   static const String onboardingImage3 =
       "assets/images/on_boarding_images/sammy-line-delivery.gif";
+
+  // Verification Images
+  static const String deliveredImageIllustration =
+      "assets/images/animations/sammy-line-man-receives-a-mail.png";
+
+  // Success images
+  static const String successIllustrator =
+      "assets/images/animations/sammy-line-success.png";
 }
