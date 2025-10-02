@@ -17,11 +17,17 @@ class CustomImages {
   static const String onboardingImage3 =
       "assets/images/on_boarding_images/sammy-line-delivery.gif";
 
-  // Verification Images
+  // Animation Images
   static const String deliveredImageIllustration =
       "assets/images/animations/sammy-line-man-receives-a-mail.png";
-
-  // Success images
   static const String successIllustrator =
       "assets/images/animations/sammy-line-success.png";
+  static const String productsIllustration =
+      "assets/images/animations/sammy-line-workout.gif";
+  static const String productsSaleIllustration =
+      "assets/images/animations/sammy-line-sale.png";
+  static const String deliveredInPlaneIllustration =
+      "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
+  static const String verifiedIllustration =
+      "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
 }
