@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shoestore/common/widgets/custom_shapes/containers/circular_container.dart';
-import 'package:shoestore/common/widgets/custom_shapes/containers/curved_edges/curved_edge_widget.dart';
+import 'package:shoestore/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:shoestore/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:shoestore/common/widgets/texts/section_heading.dart';
+import 'package:shoestore/features/shop/view/home/widgets/home_appbar.dart';
+import 'package:shoestore/features/shop/view/home/widgets/home_categories.dart';
 import 'package:shoestore/utils/constants/colors.dart';
+import 'package:shoestore/utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,48 +15,43 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       // appBar: AppBar(),
       body: SingleChildScrollView(
-        child: Column(children: [PrimaryHeaderContainer(child: Container())]),
-      ),
-    );
-  }
-}
+        child: Column(
+          children: [
+            PrimaryHeaderContainer(
+              child: Column(
+                children: [
+                  // Appbar
+                  HomeAppbar(),
+                  const SizedBox(height: CustomSizes.spaceBtwSections),
 
-class PrimaryHeaderContainer extends StatelessWidget {
-  const PrimaryHeaderContainer({super.key, required this.child});
+                  // Search container
+                  SearchContainer(text: "Search in store"),
+                  const SizedBox(height: CustomSizes.spaceBtwSections),
 
-  final Widget child;
+                  // Categories
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: CustomSizes.defaultSpace,
+                    ),
+                    child: Column(
+                      children: [
+                        // Heading
+                        SectionHeading(
+                          headingText: 'Popular Catgories',
+                          showActionButton: false,
+                          textColor: CustomColors.white,
+                        ),
+                        const SizedBox(height: CustomSizes.spaceBtwItems),
 
-  @override
-  Widget build(BuildContext context) {
-    return CurvedEdgeWidget(
-      child: Container(
-        color: CustomColors.primary,
-        padding: EdgeInsets.all(0),
-        child: SizedBox(
-          height: 400,
-          child: Stack(
-            children: [
-              Positioned(
-                top: -150,
-                right: -250,
-                child: CircularWidget(
-                  backgroundColor: CustomColors.textWhite.withValues(
-                    alpha: 0.1,
+                        // Categories
+                        HomeCategories(),
+                      ],
+                    ),
                   ),
-                ),
+                ],
               ),
-              Positioned(
-                top: 100,
-                right: -300,
-                child: CircularWidget(
-                  backgroundColor: CustomColors.textWhite.withValues(
-                    alpha: 0.1,
-                  ),
-                ),
-              ),
-              child,
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

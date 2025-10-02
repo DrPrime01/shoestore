@@ -41,7 +41,7 @@ flutter:
   assets:
     - assets/images/on_boarding_images/
     - assets/images/animations/
-    - assets/icons/
+    - assets/icons/categories/
     - assets/logos/
 
   fonts:
@@ -61,7 +61,7 @@ flutter:
           style: italic
         - asset: assets/fonts/Poppins-MediumItalic.ttf
           weight: 500
-    
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
